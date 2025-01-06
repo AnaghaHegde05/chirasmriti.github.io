@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Portfolio | DAA</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+      :root {
+        --primary-color: #9db2bf;
+        --primary-color-dark: #526d82;
+        --secondary-color: #27374d;
+        --text-dark: #27374d;
+        --text-light: #dde6ed;
+        --extra-light: #dde6ed;
+        --max-width: 1200px;
+        --border-radius: 8px;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--extra-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--primary-color-dark);
+        z-index: 99;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav__content {
+        max-width: var(--max-width);
+        margin: auto;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        list-style: none;
+      }
+
+      ul li a {
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        color: var(--text-light);
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      ul li a:hover {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+      }
+
+      .section {
+        background-color: var(--extra-light);
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+      }
+
+      .section__container {
+        max-width: var(--max-width);
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .subtitle {
+        color: var(--text-light);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .description {
+        color: var(--text-dark); /* Changed color to ensure better visibility */
+        margin-bottom: 2rem;
+      }
+
+      .image {
+        display: flex;
+        justify-content: center;
+      }
+
+      .image img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 4px solid var(--primary-color-dark);
+        object-fit: cover;
+      }
+
+      section {
+        margin-top: 2rem;
+        padding: 2rem;
+        background-color: var(--primary-color);
+        border-radius: var(--border-radius);
+        max-width: var(--max-width);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      section h2 {
+        color: var(--text-dark);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      section ul li {
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+        font-size: 1rem;
+      }
+
+      section ul li strong {
+        color: var(--text-dark);
+      }
+
+      @media (max-width: 750px) {
+        ul {
+          flex-direction: column;
+          background-color: var(--primary-color-dark);
+          padding: 1rem 0;
+          display: flex;
+          text-align: center;
+        }
+
+        ul li {
+          text-align: center;
+        }
+
+        ul li a {
+          display: block;
+        }
+
+        .section__container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="abtcrs.html">About Course</a></li>
+          <li><a href="abtproj.html">About Project</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <h1 class="title">
+            I'm <span>Anagha Hegde<br />a</span> CSE under graduate
+          </h1>
+          <p class="description">
+            I'm a passionate computer science student eager to learn and contribute to projects.
+          </p>
+        </div>
+        <div class="image">
+          <img src="assets/profile.jpg" alt="profile" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>📌Projects</h2>
+      <ul>
+        <li><strong>Project1</strong>: Library Management System - Using Python and MySQL.</li>
+      </ul>
+      <h2>🚀Skills</h2>
+      <ul>
+        <li>C, C++, Python</li>
+        <li>Data Structures and Algorithms</li>
+      </ul>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>About Project | DAA</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+      
+        :root {
+          --primary-color: #9db2bf;
+          --primary-color-dark: #526d82;
+          --secondary-color: #27374d;
+          --text-dark: #27374d;
+          --text-light: #dde6ed;
+          --extra-light: #dde6ed;
+          --max-width: 1200px;
+          --border-radius: 8px;
+          --highlight-color: #f3a623;
+        }
+      
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+      
+        body {
+          font-family: "Poppins", sans-serif;
+          background-color: var(--extra-light);
+          color: var(--text-dark);
+          line-height: 1.6;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+        }
+      
+        nav {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background-color: var(--primary-color-dark);
+          z-index: 99;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      
+        .nav__content {
+          max-width: var(--max-width);
+          margin: auto;
+          padding: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          list-style: none;
+        }
+      
+        ul li a {
+          padding: 0.5rem 1rem;
+          border-radius: var(--border-radius);
+          font-weight: 600;
+          color: var(--text-light);
+          transition: background-color 0.3s, color 0.3s;
+        }
+      
+        ul li a:hover {
+          background-color: var(--secondary-color);
+          color: var(--primary-color);
+        }
+      
+        .section {
+          background-color: var(--extra-light);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+      
+        .section__container {
+          max-width: var(--max-width);
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          padding: 2rem;
+          background-color: #fff;
+          border-radius: var(--border-radius);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+      
+        .content {
+          text-align: center;
+        }
+      
+        .subtitle {
+          color: var(--highlight-color);
+          font-weight: 600;
+          margin-bottom: 1rem;
+          font-size: 1.2rem;
+        }
+      
+        .title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+        }
+      
+                table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--primary-color);
+        }
+
+        th {
+            background-color: var(--primary-color-dark);
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        td {
+            background-color: #fff;
+            color: var(--text-dark);
+        }
+
+        a {
+            color: var(--primary-color-dark);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--highlight-color);
+            text-decoration: underline;
+        }
+
+        section h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--text-dark);
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+      
+        .course-questions {
+          background-color: var(--secondary-color);
+          padding: 1rem;
+          border-radius: var(--border-radius);
+          display: block;
+          text-align: center;
+        }
+      
+        .course-questions h3 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: var(--text-light);
+          margin-bottom: 1rem;
+        }
+      
+        @media (max-width: 750px) {
+          .section__container {
+            padding: 1rem;
+          }
+        }
+      </style>
+      
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="abtcrs.html">About Course</a></li>
+          <li><a href="abtproj.html">About Project</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <!-- Project Details -->
+        <div class="content">
+            <pre> </pre> <br/> <br/>
+          <h1 class="title">“Chirasmriti: A city of Eternal Memory”</h1><br/>
+          <h3>Need Statement</h3><br/>
+          <p>A smart transportation solution is essential to modernize metro and railway infrastructure, enabling 
+            efficient movement between platforms, streamlined traffic management at ticket counters and platforms,
+             and effective population distribution within trains. This will enhance operational efficiency, commuter 
+             safety, and overall travel experience.</p><br/>
+            <h3>Description</h3><br/>
+          <p class="description">
+            Earlier in this course, a barren land of approximately 1500 sq km was
+             designated for conversion into a smart city. Like other cities around the world,
+              this city will require basic facilities such as infrastructure, healthcare, education,
+               electricity, water systems, and many more. The conceptual design was developed by the 
+               team (as shown in the figure). The development of the city is divided into three phases,
+                with the first phase primarily focusing on the establishment of an efficient and sustainable 
+                transportation system connecting different parts of the city.
+          <br/><br/>
+          <h3>Domain</h3><br/>
+          <p>The first phase of the Chirasmriti City project focuses on the initial development of a smart metro transportation system.
+             The main challenges addressed in this phase under smart metro transportation include the creation of an efficient route 
+             network, managing high passenger volumes during peak hours, ensuring smooth railway infrastructure for quick movement 
+             between platforms and issues related to passenger ticket allotment and platform management These problems are explored 
+             as separate modules within this domain. These problems were identified based on insights gained from a case study of the 
+             local train system in Mumbai, as outlined in the corresponding white paper.</p>
+        </div>
+        <!-- Functionalities Section -->
+        <div class="content">
+        <h3>Functionalities</h3><br/>
+        <p>Here we describe the main functionalities of the Chirasmriti City project, which aim to improve operational efficiency, enhance commuter safety, and streamline the overall travel experience. For a detailed overview of the functionalities, refer to the documentation below.</p><br/>
+        <a href="path_to_your_pdf.pdf" class="btn" target="_blank">
+        <button style="padding: 1rem 2rem; background-color: var(--primary-color-dark); color: white; border: none; border-radius: var(--border-radius); font-weight: 600; cursor: pointer;">Download Full Functionalities PDF</button>
+        </a>
+        </div>
+        <!-- Team Details Section -->
+        <div class="course-questions">
+          <h3>👥 Team Details</h3>
+          <table>
+              <tr>
+                  <th>Name</th>
+                  <th>Module</th>
+                  <th>GitHub</th>
+              </tr>
+              <tr>
+                  <td>Anagha Hegde</td>
+                  <td>Project Manager</td>
+                  <td><a href="https://github.com/anaghahegde" target="_blank">GitHub Profile</a></td>
+              </tr>
+              <tr>
+                  <td>John Doe</td>
+                  <td>Algorithm Designer</td>
+                  <td><a href="https://github.com/johndoe" target="_blank">GitHub Profile</a></td>
+              </tr>
+              <tr>
+                  <td>Jane Smith</td>
+                  <td>UI/UX Designer</td>
+                  <td><a href="https://github.com/janesmith" target="_blank">GitHub Profile</a></td>
+              </tr>
+          </table>          
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
