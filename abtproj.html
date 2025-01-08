@@ -175,7 +175,34 @@
           color: var(--text-light);
           margin-bottom: 1rem;
         }
-      
+
+      .image-section {
+            text-align: center;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            border-radius: var(--border-radius);
+            max-width: var(--max-width);
+          }
+        
+          .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        
+          .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+        
+          .image-caption {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-dark);
+          }
         @media (max-width: 750px) {
           .section__container {
             padding: 1rem;
@@ -231,6 +258,12 @@
              case study of the local train system in Mumbai, as outlined in the corresponding white paper and also
               based on the personal experience.</p>
         </div>
+        <section class="image-section">
+          <div class="image-container">
+            <img src="citydesign.jpg" alt="City Designs" />
+            <p class="image-caption">CITY DESIGN</p>
+          </div>
+        </section>  
         <!-- Functionalities Section -->
         <div class="content">
         <h3>Functionalities</h3><br/>
