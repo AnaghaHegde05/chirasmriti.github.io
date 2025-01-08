@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Course Introduction | DAA</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+      :root {
+        --primary-color: #9db2bf;
+        --primary-color-dark: #526d82;
+        --secondary-color: #27374d;
+        --text-dark: #27374d;
+        --text-light: #dde6ed;
+        --extra-light: #dde6ed;
+        --max-width: 1200px;
+        --border-radius: 8px;
+        --highlight-color: #f3a623;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--extra-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--primary-color-dark);
+        z-index: 99;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav__content {
+        max-width: var(--max-width);
+        margin: auto;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        list-style: none;
+      }
+
+      ul li a {
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        color: var(--text-light); /* Lighter text color for nav */
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      ul li a:hover {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+      }
+
+      .section {
+        background-color: var(--extra-light);
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .section__container {
+        max-width: var(--max-width);
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: var(--border-radius);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .content {
+        text-align: left;
+      }
+
+      .subtitle {
+        color: var(--highlight-color);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      dl {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      dt {
+        font-weight: 600;
+        color: var(--primary-color-dark);
+      }
+
+      dd {
+        color: var(--text-dark); /* Changed dd color to dark for better visibility */
+        margin-bottom: 0.5rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+      }
+
+      /* Updated style for questions to stack vertically */
+      .course-questions {
+        background-color: var(--secondary-color);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        display: block; /* Ensure block display */
+      }
+
+      .course-questions h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+
+      .course-questions p {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: 750px) {
+        .section__container {
+          grid-template-columns: 1fr;
+          padding: 1rem;
+        }
+
+        dl {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="abtcrs.html">Course Learnings</a></li>
+          <li><a href="abtproj.html">About Project</a></li>
+          <li><a href="imp.html">Implimentation</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <!-- Course Details -->
+        <div class="content">
+          <h1 class="title">Design and Analysis of Algorithms</h1>
+          <p class="description">
+            The design and analysis of algorithms isn't just a branch in computer science,
+             it rather forms the basis of it and its core: revealing in detail the intricate patterns of nature and, at the same
+              time, showing how phenomena of nature are inspirations for computational algorithms and vice versa. It allows the 
+              student to be more analytical in their thinking and provides several ways to solve problems across different fields 
+              like science, business, and technology. It brings them closer to computational efficiency, algorithmic complexity, and 
+              the art of breaking down problems into manageable and systematic solutions.
+          </p>
+          <br />
+          <p>Exploring data structures feels like discovering a vibrant ecosystem of computational tools. Arrays and 
+            strings are a kind of continuity through their sequential memory allocation, whereas linked lists are a kind of 
+            interconnectedness that one finds in web pages or social networks. Stacks and queues represent the simplest versions
+             of everyday things such as piles of books or waiting lines, and trees and tries extend this into hierarchical data 
+             representations and quick search operations. Graphs open the door to solving network-related challenges like routing 
+             and connectivity, while hash tables showcase efficiency in mapping and retrieval. Even skip lists bring a delightful mix 
+             of randomness and precision, inspired by the flipping of coins. Algorithmically, techniques like divide-and-conquer, 
+             dynamic programming, and greedy approaches enrich problem-solving capabilities.</p>
+            <br/>
+        </div>
+        <div class="course-questions">
+          <p><strong>--How do you connect the course with real-time applications?</strong></p>
+          <p>Algorithms are invisibly part of our everyday life, operating behind the scenes to make life better.
+             For instance, Dijkstra's Algorithm will ensure navigation on GPS devices with the quickest possible route.
+              Sorting algorithms allow huge datasets to be organized within e-commerce websites to ensure relevant search 
+              results and suggestions. Machine learning algorithms allow personalized content: from movie suggestions to targeted ads.
+               Algorithms protect sensitive information through encryption and hashing in the world of cybersecurity. In health, 
+               they ensure efficient diagnostics and scheduling of resources while speeding up the discovery of drugs. The use of 
+               algorithms helps to operate search engines, run stock markets, automate manufacturing processes, and allow smart
+                assistants, among numerous applications that depend on algorithms for precise solutions of complex problems.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
