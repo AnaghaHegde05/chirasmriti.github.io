@@ -398,197 +398,198 @@ int main() {
         <i class="ri-arrow-down-s-line"></i>
       </div>
       <div class="content" id="projects">
-                <h3>Queue and Hash Map</h3>
-                <pre>
-                <code class="language-cpp">
-                #include iostream
-                #include vector
-                #include string
-                #include queue
-                using namespace std;
+                    <h3>Queue and Hash Map</h3>
+<pre>
+<code class="language-cpp">
+#include iostream
+#include vector
+#include string
+#include queue
+using namespace std;
+
+// Assigning passengers to counters based on age and gender
+void assignCounters(vector<string> names, vector<int> ages, vector<string> genders, vector<string>& counters, vector<queue<string>>& counterQueues) {
+    cout << "\n_________ALLOTTED COUNTERS_________\n";
+
+    for (size_t i = 0; i < names.size(); ++i) 
+    {
+        string counter;
+        if (ages[i] >= 60) 
+        {
+            counter = (genders[i] == "M") ? "Counter 1.1 (Senior Citizens - Male)" : "Counter 1.2 (Senior Citizens - Female)";
+        }
+        else if (ages[i] >= 18) 
+        {
+            counter = (genders[i] == "M") ? "Counter 2.1 (Adults - Male)" : "Counter 2.2 (Adults - Female)";
+        }
+        else 
+        {
+            counter = (genders[i] == "M") ? "Counter 3.1 (Minors - Male)" : "Counter 3.2 (Minors - Female)";
+        }
+
+        bool found = false;
+        size_t index = 0;
+
+    
+        for (size_t j = 0; j < counters.size(); ++j) 
+        {
+            if (counters[j] == counter) 
+            {
+                found = true;
+                index = j;
+                break;
+            }
+        }
+
+        if (!found) 
+        {
+            counters.push_back(counter);
+            counterQueues.push_back(queue<string>());
+            index = counters.size() - 1;
+        }
+
+        counterQueues[index].push(names[i]);
+
+        cout << names[i] << " (" << ages[i] << " years, " << genders[i] << "): " << counter << "\n";
+    }
+
+    // Display the queue for each counter
+    cout << "\n__________QUEUE__________\n";
+    for (size_t i = 0; i < counters.size(); ++i) 
+    {
+        cout << counters[i] << ": ";
+        queue<string> tempQueue = counterQueues[i];
+        while (!tempQueue.empty()) 
+        {
+            cout << tempQueue.front() << " ";
+            tempQueue.pop();
+        }
+        cout << endl;
+    }
+}
+
+// Issue tickets 
+void issueTickets(vector<string>& counters, vector<queue<string>>& counterQueues) 
+{
+    bool allQueuesEmpty = false;
+    
+    while (!allQueuesEmpty) 
+    {
+        allQueuesEmpty = true;
+        for (size_t i = 0; i < counters.size(); ++i) 
+        {
+            if (!counterQueues[i].empty()) 
+            {
+                string passenger = counterQueues[i].front();
+                counterQueues[i].pop();
+                cout << "Ticket issued to " << passenger << " from " << counters[i] << ".\n";
+                allQueuesEmpty = false; 
+            }
+        }
+    }
+}
+
+// Train Platform Manager
+class TrainPlatformManager 
+{
+private:
+    vector<string> keys;
+    vector<string> values;
+
+public:
+    void insert(string key, string value) 
+    {
+        for (size_t i = 0; i < keys.size(); ++i) 
+        {
+            if (keys[i] == key) 
+            {
+                values[i] = value;
+                return;
+            }
+        }
+        keys.push_back(key);
+        values.push_back(value);
+    }
+
+    string search(string key) 
+    {
+        for (size_t i = 0; i < keys.size(); ++i) 
+        {
+            if (keys[i] == key) 
+            {
+                return values[i];
+            }
+        }
+        return "No train available";
+    }
+
+    void update(string key, string newValue) 
+    {
+        for (size_t i = 0; i < keys.size(); ++i) 
+        {
+            if (keys[i] == key) 
+            {
+                values[i] = newValue;
+                cout << "Updated platform at '" << key << "'\n";
+                return;
+            }
+        }
+        cout << "Platform not found at '" << key << "'\n";
+    }
+
+    void display() 
+    {
+        cout << "\n_______Train Platform Details______\n";
+        for (size_t i = 0; i < keys.size(); ++i) 
+        {
+            cout << keys[i] << "-- " << values[i] << endl;
+        }
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter number of passengers: ";
+    cin >> n;
+
+    vector<string> names;
+    vector<int> ages;
+    vector<string> genders;
+
+    
+    for (int i = 0; i < n; ++i) 
+    {
+        string name, gender;
+        int age;
+        cout << "Enter name, age, and gender (M/F) for passenger " << i + 1 << ": ";
+        cin >> name >> age >> gender;
+        names.push_back(name);
+        ages.push_back(age);
+        genders.push_back(gender);
+    }
+
+    vector<string> counters;
+    vector<queue<string>> counterQueues;
+    assignCounters(names, ages, genders, counters, counterQueues);
+
+    cout << "\n______Issuing tickets________\n";
+    issueTickets(counters, counterQueues);
+
+    TrainPlatformManager platformManager;
+    platformManager.insert("Central", "Platform 1: 8:30 AM");
+    platformManager.insert("Market", "Platform 2: 9:00 AM");
+    platformManager.insert("Library", "Platform 3: 10:15 AM");
+
+    platformManager.display();
+
+    platformManager.update("Market", "Platform 2: 9:30 AM");
+    platformManager.display();
+    
+    return 0;
+}
                 
-                <h3>Assigning passengers to counters based on age and gender</h3>
-                void assignCounters(vector<string> names, vector<int> ages, vector<string> genders, vector<string>& counters, vector<queue<string>>& counterQueues) {
-                    cout << "\n_________ALLOTTED COUNTERS_________\n";
-                
-                    for (size_t i = 0; i < names.size(); ++i) 
-                    {
-                        string counter;
-                        if (ages[i] >= 60) 
-                        {
-                            counter = (genders[i] == "M") ? "Counter 1.1 (Senior Citizens - Male)" : "Counter 1.2 (Senior Citizens - Female)";
-                        }
-                        else if (ages[i] >= 18) 
-                        {
-                            counter = (genders[i] == "M") ? "Counter 2.1 (Adults - Male)" : "Counter 2.2 (Adults - Female)";
-                        }
-                        else 
-                        {
-                            counter = (genders[i] == "M") ? "Counter 3.1 (Minors - Male)" : "Counter 3.2 (Minors - Female)";
-                        }
-                
-                        bool found = false;
-                        size_t index = 0;
-                
-                    
-                        for (size_t j = 0; j < counters.size(); ++j) 
-                        {
-                            if (counters[j] == counter) 
-                            {
-                                found = true;
-                                index = j;
-                                break;
-                            }
-                        }
-                
-                        if (!found) 
-                        {
-                            counters.push_back(counter);
-                            counterQueues.push_back(queue<string>());
-                            index = counters.size() - 1;
-                        }
-                
-                        counterQueues[index].push(names[i]);
-                
-                        cout << names[i] << " (" << ages[i] << " years, " << genders[i] << "): " << counter << "\n";
-                    }
-                
-                    // Display the queue for each counter
-                    cout << "\n__________QUEUE__________\n";
-                    for (size_t i = 0; i < counters.size(); ++i) 
-                    {
-                        cout << counters[i] << ": ";
-                        queue<string> tempQueue = counterQueues[i];
-                        while (!tempQueue.empty()) 
-                        {
-                            cout << tempQueue.front() << " ";
-                            tempQueue.pop();
-                        }
-                        cout << endl;
-                    }
-                }
-                
-                <h3>Issue tickets</h3>
-                void issueTickets(vector<string>& counters, vector<queue<string>>& counterQueues) 
-                {
-                    bool allQueuesEmpty = false;
-                    
-                    while (!allQueuesEmpty) 
-                    {
-                        allQueuesEmpty = true;
-                        for (size_t i = 0; i < counters.size(); ++i) 
-                        {
-                            if (!counterQueues[i].empty()) 
-                            {
-                                string passenger = counterQueues[i].front();
-                                counterQueues[i].pop();
-                                cout << "Ticket issued to " << passenger << " from " << counters[i] << ".\n";
-                                allQueuesEmpty = false;
-                            }
-                        }
-                    }
-                }
-                
-                <h3>Train Platform Manager - using vector-based implementation</h3>
-                class TrainPlatformManager 
-                {
-                private:
-                    vector<string> keys;
-                    vector<string> values;
-                
-                public:
-                    void insert(string key, string value) 
-                    {
-                        for (size_t i = 0; i < keys.size(); ++i) 
-                        {
-                            if (keys[i] == key) 
-                            {
-                                values[i] = value;
-                                return;
-                            }
-                        }
-                        keys.push_back(key);
-                        values.push_back(value);
-                    }
-                
-                    string search(string key) 
-                    {
-                        for (size_t i = 0; i < keys.size(); ++i) 
-                        {
-                            if (keys[i] == key) 
-                            {
-                                return values[i];
-                            }
-                        }
-                        return "No train available";
-                    }
-                
-                    void update(string key, string newValue) 
-                    {
-                        for (size_t i = 0; i < keys.size(); ++i) 
-                        {
-                            if (keys[i] == key) 
-                            {
-                                values[i] = newValue;
-                                cout << "Updated platform at '" << key << "'\n";
-                                return;
-                            }
-                        }
-                        cout << "Platform not found at '" << key << "'\n";
-                    }
-                
-                    void display() 
-                    {
-                        cout << "\n_______Train Platform Details______\n";
-                        for (size_t i = 0; i < keys.size(); ++i) 
-                        {
-                            cout << keys[i] << "-- " << values[i] << endl;
-                        }
-                    }
-                };
-                
-                int main() {
-                    int n;
-                    cout << "Enter number of passengers: ";
-                    cin >> n;
-                
-                    vector<string> names;
-                    vector<int> ages;
-                    vector<string> genders;
-                
-                    
-                    for (int i = 0; i < n; ++i) 
-                    {
-                        string name, gender;
-                        int age;
-                        cout << "Enter name, age, and gender (M/F) for passenger " << i + 1 << ": ";
-                        cin >> name >> age >> gender;
-                        names.push_back(name);
-                        ages.push_back(age);
-                        genders.push_back(gender);
-                    }
-                
-                    vector<string> counters;
-                    vector<queue<string>> counterQueues;
-                    assignCounters(names, ages, genders, counters, counterQueues);
-                
-                    cout << "\n______Issuing tickets________\n";
-                    issueTickets(counters, counterQueues);
-                
-                    TrainPlatformManager platformManager;
-                    platformManager.insert("Central", "Platform 1: 8:30 AM");
-                    platformManager.insert("Market", "Platform 2: 9:00 AM");
-                    platformManager.insert("Library", "Platform 3: 10:15 AM");
-                
-                    platformManager.display();
-                
-                    platformManager.update("Market", "Platform 2: 9:30 AM");
-                    platformManager.display();
-                    
-                    return 0;
-                }  
-            </code>
-            </pre>
+</code>
+</pre>
       </div>
 
       <div class="toggle" onclick="toggleContent(this)">
